@@ -1,0 +1,31 @@
+# --- Setup awal ---
+git clone https://github.com/username/nama-repo.git   // clone repo dari GitHub
+cd nama-repo                                          // masuk ke folder repo
+
+# --- Branch workflow ---
+git checkout -b nama-branch      // buat branch baru + langsung pindah
+git branch                       // lihat semua branch lokal
+git checkout nama-branch         // pindah ke branch lain
+
+# --- Kerja & simpan perubahan ---
+git status                       // cek status file
+git add .                        // stage semua perubahan
+git commit -m "pesan commit"     // simpan perubahan
+
+# --- Kirim ke GitHub ---
+git push origin nama-branch      // push branch baru/ada ke GitHub
+git pull origin main             // tarik update terbaru dari main
+
+# --- Setelah merge PR ---
+git checkout main                // balik ke main
+git pull origin main             // sync main biar update
+
+# --- Hapus branch ---
+git branch -d nama-branch        // hapus branch lokal (aman, sudah merge)
+git branch -D nama-branch        // paksa hapus branch lokal
+git push origin --delete nama-branch   // hapus branch di GitHub (remote)
+
+# --- Extra useful ---
+git log --oneline                // lihat history commit singkat
+git rev-parse --abbrev-ref HEAD  // cek branch aktif sekarang
+git remote -v                    // cek alamat remote GitHub
